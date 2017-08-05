@@ -2,12 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model() {
-		return this.store.createRecord('contact');
+		return this.store.createRecord('library');
 	},
 
 	actions: {
-		saveContact(newContact) {
-			newContact.save().then(() => this.transitionTo('admin.contacts'));
+		saveLibrary(newLibrary) {
+			newLibrary.save().then(() => this.transitionTo('libraries'));
 		},
 
 		willTransaction() {

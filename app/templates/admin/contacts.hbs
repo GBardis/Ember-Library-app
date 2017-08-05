@@ -1,0 +1,21 @@
+<h1>Contacts</h1>
+
+<div class="well">
+  <ul class="nav nav-pills">
+    {{#link-to 'admin.contacts' tagName="li" }}<a href="">List all</a>{{/link-to}}
+    {{#link-to 'contact' tagName="li" }}<a href="">Add new</a>{{/link-to}}
+  </ul>
+</div>
+<h2>List</h2>
+{{#each model as |contact|}}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Info</h3>
+    </div>
+    <div class="panel-body">
+      <p>Email: {{contact.emailAddress}}</p>
+      <p>Message: {{contact.message}}</p>
+    </div>
+  </div>
+{{/each}}
+{{outlet}}
