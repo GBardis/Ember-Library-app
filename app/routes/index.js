@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 		saveInvitation(saveInvitation) {
 
 			// let model = this.controller.get('model');
-			saveInvitation.save().then(() => confirm(`Saving of the following email address is in progress: ${saveInvitation.model}`));
+			saveInvitation.save().then(() => this.transitionTo('admin.contacts'));
 		},
 
 		willTransaction() {
