@@ -1,15 +1,13 @@
 /* eslint-env node */
 
-module.exports = function(environment)
-{
+module.exports = function(environment) {
 	var ENV = {
 		modulePrefix: 'library-app',
 		environment: environment,
 		rootURL: '/',
 		locationType: 'auto',
 
-		firebase:
-		{
+		firebase: {
 			apiKey: "AIzaSyDlBJcLeZhzNFStN-15I0RgxTOozecHKu4",
 			authDomain: "ember-6606e.firebaseapp.com",
 			databaseURL: "https://ember-6606e.firebaseio.com",
@@ -19,36 +17,30 @@ module.exports = function(environment)
 		},
 
 		// if using ember-cli-content-security-policy
-		contentSecurityPolicy:
-		{
+		contentSecurityPolicy: {
 			'script-src': "'self' 'unsafe-eval' apis.google.com",
 			'frame-src': "'self' https://*.firebaseapp.com",
 			'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
 		},
 
-		EmberENV:
-		{
-			FEATURES:
-			{
+		EmberENV: {
+			FEATURES: {
 				// Here you can enable experimental features on an ember canary build
 				// e.g. 'with-controller': true
 			},
-			EXTEND_PROTOTYPES:
-			{
+			EXTEND_PROTOTYPES: {
 				// Prevent Ember Data from overriding Date.parse.
 				Date: false
 			}
 		},
 
-		APP:
-		{
+		APP: {
 			// Here you can pass flags/options to your application instance
 			// when it is created
 		}
 	};
 
-	if (environment === 'development')
-	{
+	if (environment === 'development') {
 		ENV.APP.LOG_RESOLVER = true;
 		ENV.APP.LOG_ACTIVE_GENERATION = true;
 		ENV.APP.LOG_TRANSITIONS = true;
@@ -56,8 +48,7 @@ module.exports = function(environment)
 		ENV.APP.LOG_VIEW_LOOKUPS = true;
 	}
 
-	if (environment === 'test')
-	{
+	if (environment === 'test') {
 		// Testem prefers this...
 		ENV.locationType = 'none';
 
@@ -68,10 +59,10 @@ module.exports = function(environment)
 		ENV.APP.rootElement = '#ember-testing';
 	}
 
-	if (environment === 'production')
-	{
-
+	if (environment === 'production') {
+		ENV['ember-faker'] = {
+			enabled: true
+		};
 	}
-
 	return ENV;
 };
